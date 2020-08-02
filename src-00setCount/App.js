@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './App.css';
 
-
+//setCount
 const App = () => {
   const [count, setCount] = useState(0);
   const [email, setEmail] = useState("");
