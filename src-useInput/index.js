@@ -1,7 +1,6 @@
 import React ,{useState} from 'react';
-// import React from 'react';
-// import {useInput} from './useInput';
-
+import ReactDOM from 'react-dom';
+//useInput
 const useInput  = (initialValue, validator) => {
   const [value, setValue] = useState(initialValue);
   const onChange = (e) => {
@@ -10,7 +9,8 @@ const useInput  = (initialValue, validator) => {
     let willUpdate = true;
     if(typeof validator === 'function'){
       // 함수 실행
-      willUpdate = validator(value);     
+      willUpdate = validator(value);   
+      //console.log(willUpdate)  
     }
     if(willUpdate){
       setValue(value);
@@ -23,7 +23,7 @@ const useInput  = (initialValue, validator) => {
 const App = () => {
   // 함수 인자 전달, boolean
   const validator = (value) => value.length < 10; 
-
+  console.log(validator('1111111111'))
   // 인자 정의
   const name = useInput('Mr.', validator);
   return(
@@ -34,4 +34,8 @@ const App = () => {
   )
 }
 
-export default App;
+//01useInput
+ReactDOM.render(
+    <App />,
+  document.getElementById('root')
+);

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-
-//setCount
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+//useState
 const App = () => {
   const [count, setCount] = useState(0);
   const [email, setEmail] = useState("");
@@ -20,4 +21,7 @@ const App = () => {
   )
 }
 
-export default App;
+ReactDOM.render(
+    <App />,
+  document.getElementById('root')
+);
